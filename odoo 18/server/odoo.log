@@ -1,8 +1,0 @@
-2025-02-08 04:40:47,602 18576 INFO ? odoo: Odoo version 18.0-20250204 
-2025-02-08 04:40:47,602 18576 INFO ? odoo: Using configuration file at C:\Users\Process Drive\Music\odoo 18\server\odoo.conf 
-2025-02-08 04:40:47,602 18576 INFO ? odoo: addons paths: ['C:\\Users\\Process Drive\\Music\\odoo 18\\server\\odoo\\addons', 'c:\\users\\process drive\\music\\odoo 18\\sessions\\addons\\18.0', 'c:\\users\\process drive\\music\\odoo 18\\server\\odoo\\addons'] 
-2025-02-08 04:40:47,602 18576 INFO ? odoo: database: openpg@localhost:5432 
-2025-02-08 04:40:48,410 18576 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at C:\Users\Process Drive\Music\odoo 18\thirdparty\wkhtmltopdf.exe 
-2025-02-08 04:40:48,429 18576 INFO ? odoo.addons.base.models.ir_actions_report: You need Wkhtmltoimage to generate images from html. 
-2025-02-08 04:40:49,425 18576 INFO ? odoo.service.server: Initiating shutdown 
-2025-02-08 04:40:49,425 18576 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
