@@ -15,7 +15,9 @@ class HospitalAppointment(models.Model):
     note=fields.Text(string="Note")
     state=fields.Selection([('draft','Draft'),('confirmed','Confirmed'),('ongoing','Ongoing'),('done','Done'),('cancel','Cancelled')],default="draft", tracking=True)
     appointment_line_ids=fields.One2many('hospital.appointment.lines','appointment_id', string="Prescription")
-    total_qty = fields.Float( compute='_compute_total_qty', string='Total Quantity')
+    total_qty = fields.Float( compute='_compute_total_qty', string='Total Quantity', store=True)
+    date_of_birth=fields.Date(related="patient_id.date_of_birth")
+
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -24,6 +26,7 @@ class HospitalAppointment(models.Model):
                 vals['reference'] = self.env['ir.sequence'].next_by_code('hospital.appointment')
         return super().create(vals_list)
 
+    @api.depends('appointment_line_ids','appointment_line_ids.qty')
     def _compute_total_qty(self):
         for rec in self:
             total_qty=0
