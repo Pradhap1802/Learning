@@ -8,7 +8,6 @@
         <field name="arch" type="xml">
             <list string="Patients">
                     <field name="name" optional="show"/>
-                     <field name="fullname" optional="show"/>
                     <field name="date_of_birth" optional="hidden"/>
                     <field name="gender"  optional="show"/>
                     <field name="diagnosis"  optional="hidden"/>
@@ -27,7 +26,6 @@
                     <group>
                         <group>
                             <field name="name" />
-                             <field name="fullname" />
                             <field name="date_of_birth" />
                             <field name="tag_ids" widget="many2many_tags" />
                         </group>
