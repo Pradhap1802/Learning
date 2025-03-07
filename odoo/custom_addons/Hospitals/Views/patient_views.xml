@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_hospital_patient_list" model="ir.ui.view">
+        <field name="name">hospital.patient.list</field>
+        <field name="model">hospital.patient</field>
+        <field name="priority">10</field>
+        <field name="arch" type="xml">
+            <list string="Patients">
+                    <field name="name" optional="show"/>
+                     <field name="fullname" optional="show"/>
+                    <field name="date_of_birth" optional="hidden"/>
+                    <field name="gender"  optional="show"/>
+                    <field name="diagnosis"  optional="hidden"/>
+                    <field name="tag_ids"  optional="hidden"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_hospital_patient_form" model="ir.ui.view">
+        <field name="name">hospital.patient.form</field>
+        <field name="model">hospital.patient</field>
+        <field name="priority">10</field>
+        <field name="arch" type="xml">
+            <form string="Patients" >
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                             <field name="fullname" />
+                            <field name="date_of_birth" />
+                            <field name="tag_ids" widget="many2many_tags" />
+                        </group>
+                        <group>
+                            <field name="gender" />
+                            <field name="diagnosis" />
+                        </group>
+                    </group>
+                </sheet>
+                 <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hospital_patient" model="ir.actions.act_window">
+        <field name="name">Patients</field>
+        <field name="res_model">hospital.patient</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Patient
+            </p>
+        </field>
+    </record>
+
+</odoo>
